@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var names: [String] = ["Paul","Luc","Emma","Maria"]
     var body: some View {
         VStack {
             List {
-                Text("Paul")
-                Text("Luc")
-                Text("Emma")
-                Text("Maria")
+                
             }
         }
         .padding()
