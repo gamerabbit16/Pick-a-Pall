@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var names: [String] = ["Paul","Luc","Emma","Maria"]
+    @State private var names: [String] = []
     @State private var nametoAdd = ""
     @State private var pickedName = ""
     @State private var shouldRemovePickedName = false
@@ -36,8 +36,12 @@ struct ContentView: View {
                 .autocorrectionDisabled()
                 .onSubmit {
                     if !nametoAdd.isEmpty {
-                        names.append(nametoAdd)
-                        nametoAdd = ""
+                        if names.contains(nametoAdd){
+                            return
+                        } else {
+                            names.append(nametoAdd)
+                            nametoAdd = ""
+                        }
                     }
                 }
             Divider()
